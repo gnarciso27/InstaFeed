@@ -1,0 +1,90 @@
+/*import React, { useState } from 'react';
+import { Text, View, Image, } from 'react-native';
+import AppIntroSlider from 'react-native-app-intro-slider';
+import MainScreen from './home/Home';
+
+const slides = [
+  {
+    key: '1',
+    title: 'Alaga Parnamirim',
+    text: 'Seja Bem-Vindo ao nosso App! Deslize para esquerda ou clique no botão e nos conheça melhor!',
+    image: require('./assets/BV.png')
+  },
+  {
+    key: '2',
+    title: 'Quem somos',
+    text: 'Nosso grupo é composto pelos alunos do IFRN Guilherme, Afonso, Patricía, Jamile e Roberto',
+    image: require('./assets/davi.png')
+  },
+  {
+    key: '3',
+    title: 'O que queremos',
+    text: 'Queremos uma Parnamirim melhor!',
+    image: require('./assets/afonso.png')
+  },
+]
+
+export default function App(){
+
+  const [showHome, setShowHome] = useState(false);
+
+  function renderSlides({ item }){
+    return(
+      <View style={{flex:1}}>
+        <Image
+          source={item.image}
+          style={{
+            resizeMode: 'cover',
+            height: '73%',
+            width: '100%',
+          }}
+        />
+        <Text 
+        style={{
+          paddingTop: 25,
+          paddingBottom: 10,
+          fontSize: 23,
+          fontWeight: 'bold',
+          alignSelf: 'center',
+          color: '#009CFF',
+        }}>
+          {item.title}
+        </Text>
+
+        <Text 
+        style={{
+          textAlign: 'center',
+          color: '#b5b5b5',
+          paddingHorizontal: 25,
+          fontSize: 15,
+        }}>
+          {item.text}
+        </Text>
+      </View>
+    )
+  }
+
+  function handleDone(){
+    setShowHome(true);
+  }
+
+  if(showHome){
+    return <MainScreen />
+  } else {
+    return(
+      <AppIntroSlider
+        renderItem={renderSlides}
+        data={slides}
+        activeDotStyle={{
+          backgroundColor: '#009CFF',
+          width: 30
+        }}
+        renderNextButton={ () => <Text style={{fontSize: 20}}>Próximo</Text>}
+        renderDoneButton={ () => <Text style={{fontSize: 20}}>Acessar!</Text>}
+        onDone={handleDone}
+      />
+    );
+  }
+
+}*/
+

@@ -1,0 +1,23 @@
+/*import React, { useRef } from 'react';
+import { SafeAreaView, Animated } from 'react-native';
+import Home from './components/header/header'; // Certifique-se de que o caminho esteja correto
+import Header from './home/Home'; // Certifique-se de que o caminho esteja correto
+
+export default function MainScreen() {
+  const scrollY = useRef(new Animated.Value(0)).current;
+
+  return (
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
+      <Header scrollY={scrollY} />
+      <Animated.ScrollView
+        onScroll={Animated.event(
+          [{ nativeEvent: { contentOffset: { y: scrollY } } }],
+          { useNativeDriver: false }
+        )}
+        scrollEventThrottle={16}
+      >
+        <Home />
+      </Animated.ScrollView>
+    </SafeAreaView>
+  );
+}*/

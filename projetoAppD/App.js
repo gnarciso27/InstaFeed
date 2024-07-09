@@ -1,65 +1,87 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View,Image, ScrollView, SafeAreaView, TouchableOpacity } from 'react-native';
-import { Entypo } from '@expo/vector-icons';
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import { Text, View, Image } from 'react-native';
+import AppIntroSlider from 'react-native-app-intro-slider';
+import MainScreen from './MainScreen';
 
-function AlagaFeed({user}) {
-  const [liked, setLikeState] = useState(false);
-  return (
-    <View style={{paddingTop: 50,}}>
-      <View style={{ flexDirection : 'row', padding: 15, alignItems: 'center',}}>
-        <Image
-            style={{
-            marginRight: 9,
-            width: 40,
-            height: 40,
-            borderRadius:20,
-          }}
-          source={{uri: `https://github.com/${user}.png`}}
-        />
-        <Text>{user}</Text>
-        </View>
-      <View>
-        <Image
-          style={{
-          width: '100%',
-          height: 350,
-        }}
-        source={{uri:  `https://github.com/${user}.png`}}
-        /> 
-      </View>
-      <View style= {{ flexDirection : 'row', padding: 15, alignItems: 'center',}}>
-        <TouchableOpacity onPress={() => setLikeState(!liked)}>
-          { liked && <Entypo name="heart" size={24} color="red" />}
-          {!liked && <Entypo name="heart-outlined" size={24} color="black" />}
-        </TouchableOpacity>
-      </View>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+const slides = [
+  {
+    key: '1',
+    title: 'Alaga Parnamirim',
+    text: 'Seja Bem-Vindo ao nosso App! Deslize para esquerda ou clique no botão e nos conheça melhor!',
+    image: require('./assets/BV.png')
+  },
+  {
+    key: '2',
+    title: 'Quem somos',
+    text: 'Nosso grupo é composto pelos alunos do IFRN Guilherme, Afonso, Patricía, Jamile e Roberto',
+    image: require('./assets/davi.png')
+  },
+  {
+    key: '3',
+    title: 'O que queremos',
+    text: 'Queremos uma Parnamirim melhor!',
+    image: require('./assets/afonso.png')
+  },
+]
 
 export default function App() {
-  return(
-    <SafeAreaView style={styles.container}>
-      <ScrollView>
-        {
-        [
-          'afonsotrs',
-          'gnarciso27'
-        ].map((user) => 
-          <AlagaFeed key = {user} user ={user}/>
-        )}
-      </ScrollView>
-    </SafeAreaView>
-  );
-}
+  const [showHome, setShowHome] = useState(false);
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    //alignItems: 'center',
-    //justifyContent: 'center',
-  },
-});
+  function renderSlides({ item }) {
+    return (
+      <View style={{ flex: 1 }}>
+        <Image
+          source={item.image}
+          style={{
+            resizeMode: 'cover',
+            height: '73%',
+            width: '100%',
+          }}
+        />
+        <Text
+          style={{
+            paddingTop: 25,
+            paddingBottom: 10,
+            fontSize: 23,
+            fontWeight: 'bold',
+            alignSelf: 'center',
+            color: '#009CFF',
+          }}>
+          {item.title}
+        </Text>
+
+        <Text
+          style={{
+            textAlign: 'center',
+            color: '#b5b5b5',
+            paddingHorizontal: 25,
+            fontSize: 15,
+          }}>
+          {item.text}
+        </Text>
+      </View>
+    );
+  }
+
+  function handleDone() {
+    setShowHome(true);
+  }
+
+  if (showHome) {
+    return <MainScreen />;
+  } else {
+    return (
+      <AppIntroSlider
+        renderItem={renderSlides}
+        data={slides}
+        activeDotStyle={{
+          backgroundColor: '#009CFF',
+          width: 30,
+        }}
+        renderNextButton={() => <Text style={{ fontSize: 20 }}>Próximo</Text>}
+        renderDoneButton={() => <Text style={{ fontSize: 20 }}>Acessar!</Text>}
+        onDone={handleDone}
+      />
+    );
+  }
+}
