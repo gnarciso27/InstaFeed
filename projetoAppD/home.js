@@ -1,12 +1,18 @@
 import React from "react";
-import { SafeAreaView, View } from "react-native";
+import { SafeAreaView, } from "react-native";
 import ListaHorizontal from './LH';
+
+import image1 from './assets/pedro.png';
+import image2 from './assets/Walyson.png';
+import image3 from './assets/richardson.png';
 
 
 
 const Home = () => {
     const data = [
-        '#FF6633',
+        image1,
+        image2,
+        image3,
         '#FFB399',
         '#FF33FF',
         '#FFFF99',

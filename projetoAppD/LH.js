@@ -1,5 +1,5 @@
 import React from "react";
-import { Dimensions, FlatList, View } from "react-native";
+import { Dimensions, FlatList, View, Image, } from "react-native";
 const {width} = Dimensions.get('window');
 
 const ListaHorizontal = ({data}) => {
@@ -24,8 +24,18 @@ const ListaHorizontal = ({data}) => {
                         marginTop: 50,
                         marginHorizontal: 10,
                         borderRadius: 12,
+                        overflow: 'hidden',
                     }}
-                />
+                >
+                  <Image 
+                        source={item} 
+                        style={{ 
+                            height: '100%', 
+                            width: '100%' 
+                        }}
+                        resizeMode="cover" 
+                    />  
+                </View>
             )}
         />
     );
