@@ -14,13 +14,13 @@ const slides = [
     key: '2',
     title: 'Quem somos',
     text: 'Nosso grupo é composto pelos alunos do IFRN Guilherme, Afonso, Patricía, Jamile e Roberto',
-    image: require('./assets/davi.png')
+    image: require('./assets/IF.png')
   },
   {
     key: '3',
     title: 'O que queremos',
     text: 'Queremos uma Parnamirim melhor!',
-    image: require('./assets/afonso.png')
+    image: require('./assets/parna.png')
   },
 ]
 

@@ -2,9 +2,9 @@ import React from "react";
 import { SafeAreaView, } from "react-native";
 import ListaHorizontal from './LH';
 
-import image1 from './assets/pedro.png';
-import image2 from './assets/Walyson.png';
-import image3 from './assets/richardson.png';
+import image1 from './assets/ABC3.png';
+import image2 from './assets/flamengo.png';
+import image3 from './assets/silva.png';
 
 
 
