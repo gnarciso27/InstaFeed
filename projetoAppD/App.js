@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { Text, View, Image } from 'react-native';
 import AppIntroSlider from 'react-native-app-intro-slider';
-import MainScreen from './MainScreen';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import MainScreen from './MainScreen'; // Ajuste o caminho conforme necessário
+import Publicacao from './publicacao'; // Crie este componente
+import Perfil from './perfil'; // Crie este componente
 
 const slides = [
   {
@@ -22,9 +26,11 @@ const slides = [
     text: 'Queremos uma Parnamirim melhor!',
     image: require('./assets/parna.png')
   },
-]
+];
 
-export default function App() {
+const Tab = createBottomTabNavigator();
+
+const App = () => {
   const [showHome, setShowHome] = useState(false);
 
   function renderSlides({ item }) {
@@ -68,7 +74,27 @@ export default function App() {
   }
 
   if (showHome) {
-    return <MainScreen />;
+    return (
+      <NavigationContainer>
+        <Tab.Navigator>
+          <Tab.Screen 
+            name="Início" 
+            component={MainScreen} 
+            options={{ headerShown: false }} 
+          />
+          <Tab.Screen 
+            name="Publicação" 
+            component={Publicacao} 
+            options={{ headerShown: false }} 
+          />
+          <Tab.Screen 
+            name="Perfil" 
+            component={Perfil} 
+            options={{ headerShown: false }} 
+          />
+        </Tab.Navigator>
+      </NavigationContainer>
+    );
   } else {
     return (
       <AppIntroSlider
@@ -84,4 +110,6 @@ export default function App() {
       />
     );
   }
-}
+};
+
+export default App;
