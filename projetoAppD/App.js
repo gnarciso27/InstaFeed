@@ -4,9 +4,9 @@ import AppIntroSlider from 'react-native-app-intro-slider';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MainScreen from './MainScreen/MainScreen'; // Ajuste o caminho conforme necessário
-import Mapa from './Mapa'; // Crie este componente
+import Mapa from './mapa/Mapa'; // Crie este componente
 import Perfil from './perfil/perfil'; // Crie este componente
-import loja from './loja';
+import loja from './loja/loja';
 
 const slides = [
   {

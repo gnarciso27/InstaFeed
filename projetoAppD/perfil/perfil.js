@@ -1,32 +1,40 @@
-// Perfil.js
 import React from 'react';
-import { View, Text, StyleSheet, Image, Button } from 'react-native';
+import { View, Text, StyleSheet, Image, Button, SafeAreaView } from 'react-native';
+import HeaderP from './headerP';
+import ImagemDePerfil from '../assets/davi.png';
 
 const Perfil = () => {
   return (
-    <View style={styles.container}>
-      <Image 
-        source={{ uri: 'https://via.placeholder.com/150' }} 
-        style={styles.profileImage} 
-      />
-      <Text style={styles.name}>Nome do Usuário</Text>
-      <Button 
-        title="Editar Perfil" 
-        onPress={() => alert('Editar Perfil')} 
-        color="#841584"
-      />
-    </View>
+    <SafeAreaView style={styles.safeArea}>
+      <HeaderP />
+      <View style={styles.container}>
+        <Image
+          source={ImagemDePerfil}
+          style={styles.ImagemDePerfil}
+        />
+        <Text style={styles.name}>Nome do Usuário</Text>
+        <Button
+          title="Editar Perfil"
+          onPress={() => alert('Editar Perfil')}
+          color="#841584"
+        />
+      </View>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     padding: 16,
   },
-  profileImage: {
+  ImagemDePerfil: {
     width: 150,
     height: 150,
     borderRadius: 75,
@@ -40,4 +48,3 @@ const styles = StyleSheet.create({
 });
 
 export default Perfil;
-

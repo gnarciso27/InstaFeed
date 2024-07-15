@@ -1,6 +1,6 @@
 import React from 'react';
 import { SafeAreaView, View, Text, StyleSheet } from 'react-native';
-import Header from './header'; // Certifique-se de ajustar o caminho conforme necessário
+import Header from './headerMain'; // Certifique-se de ajustar o caminho conforme necessário
 import Home from './home';
 
 const MainScreen = () => {
