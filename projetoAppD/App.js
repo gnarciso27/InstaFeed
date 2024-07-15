@@ -5,7 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MainScreen from './MainScreen/MainScreen'; // Ajuste o caminho conforme necessário
 import Mapa from './Mapa'; // Crie este componente
-import Perfil from './perfil'; // Crie este componente
+import Perfil from './perfil/perfil'; // Crie este componente
 import loja from './loja';
 
 const slides = [
