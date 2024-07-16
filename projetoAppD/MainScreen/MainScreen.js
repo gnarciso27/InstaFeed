@@ -1,17 +1,24 @@
 import React from 'react';
-import { SafeAreaView, View, StyleSheet } from 'react-native';
+import { SafeAreaView, FlatList, View, StyleSheet } from 'react-native';
 import Header from './headerMain';
 import HomeLH from './homeLH';
 import HomeLV from './homeLV';
 
 const MainScreen = () => {
+  const data = [
+    { key: 'HEADER', renderItem: () => <Header /> },
+    { key: 'HOMELH', renderItem: () => <HomeLH /> },
+    { key: 'HOMELV', renderItem: () => <HomeLV /> },
+  ];
+
   return (
     <SafeAreaView style={styles.container}>
-      <Header />
-      <View style={styles.content}>
-        <HomeLH />
-        <HomeLV />
-      </View>
+      <FlatList
+        data={data}
+        renderItem={({ item }) => item.renderItem()}
+        keyExtractor={(item) => item.key}
+        contentContainerStyle={styles.content}
+      />
     </SafeAreaView>
   );
 };
@@ -22,8 +29,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   content: {
-    flex: 1,
-    width: '100%',
     paddingHorizontal: 10,
   },
 });

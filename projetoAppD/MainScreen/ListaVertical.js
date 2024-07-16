@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, FlatList, View, Image, StyleSheet, Dimensions } from 'react-native';
+import { Text, FlatList, View, Image, StyleSheet, Dimensions } from 'react-native';
 
 const { width } = Dimensions.get('window');
 
@@ -7,7 +7,7 @@ const ListaVertical = ({ data }) => {
     return (
         <View>
             <Text style={{
-                fontSize:30,
+                fontSize: 30,
                 paddingLeft: 10,
             }}>
                 Motivação:
@@ -42,7 +42,6 @@ const styles = StyleSheet.create({
     itemImage: {
         height: '100%',
         width: '100%',
-
     },
 });
 

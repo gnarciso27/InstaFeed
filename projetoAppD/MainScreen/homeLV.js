@@ -1,5 +1,4 @@
-import React from "react";
-import { SafeAreaView } from "react-native";
+import React from 'react';
 import ListaVertical from './ListaVertical';
 
 import image1 from '../assets/danca.png';
@@ -17,9 +16,7 @@ const HomeLV = () => {
   ];
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <ListaVertical data={data} />
-    </SafeAreaView>
+    <ListaVertical data={data} />
   );
 };
 
