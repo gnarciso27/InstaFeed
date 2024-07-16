@@ -1,14 +1,16 @@
 import React from 'react';
-import { SafeAreaView, View, Text, StyleSheet } from 'react-native';
-import Header from './headerMain'; // Certifique-se de ajustar o caminho conforme necessário
-import Home from './home';
+import { SafeAreaView, View, StyleSheet } from 'react-native';
+import Header from './headerMain';
+import HomeLH from './homeLH';
+import HomeLV from './homeLV';
 
 const MainScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Header />
       <View style={styles.content}>
-        <Home/>
+        <HomeLH />
+        <HomeLV />
       </View>
     </SafeAreaView>
   );
@@ -21,11 +23,8 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  mainText: {
-    fontSize: 18,
+    width: '100%',
+    paddingHorizontal: 10,
   },
 });
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { SafeAreaView, } from "react-native";
-import ListaHorizontal from './LH';
+import ListaHorizontal from './ListaHorizontal';
 
 import image1 from '../assets/ABC3.png';
 import image2 from '../assets/flamengo.png';
@@ -8,7 +8,7 @@ import image3 from '../assets/silva.png';
 
 
 
-const Home = () => {
+const HomeLH = () => {
     const data = [
         image1,
         image2,
@@ -30,4 +30,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default HomeLH;
