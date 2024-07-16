@@ -9,7 +9,7 @@ const ListaHorizontal = ({ data }) => {
                 fontSize:30,
                 paddingLeft: 10,
             }}>
-                Notícias
+                Eventos
             </Text>
             <FlatList
                 data={data}
